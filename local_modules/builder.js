@@ -1,10 +1,10 @@
 module.exports = {
-    information : function(title, dirnameicon, electrons, files) {
+    information : function(title, dirnameicon, files) {
         const fs = require('fs')
 
     //코드 변경시 문제가 발생할 수 있습니다.
     //기본 설정된 값이 불편하신분만 변경해주세요
-    const {app, BrowserWindow} = electrons//require('electron')
+    const {app, BrowserWindow} = require('electron')
     const path = require('path')
     const url = require('url')
 
