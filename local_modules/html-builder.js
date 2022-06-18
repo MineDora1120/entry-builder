@@ -3,7 +3,7 @@ exports.html = function(url, files) {
 const fs = require("fs")
     const content = `
 <body style="overflow:hidden;">
-<iframe width="1080" height="1920" src="${url}" frameborder="0"></iframe>
+<script>window.location.href = "${url}"</script> 
 </body>
 `
 fs.writeFile(files, content, err => {
