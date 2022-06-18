@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  const alertOnlineStatus = () => {
+    if(!navigator.onLine) {
+    window.alert('엔트리에 접속할 수 없습니다! \n인터넷 연결을 확인하고 프로그램을 다시 실행해 주세요!')
+    }
+  }
+
+  window.addEventListener('online',  alertOnlineStatus)
+  window.addEventListener('offline',  alertOnlineStatus)
+
+  alertOnlineStatus()
+</script>
+</body>
+</html>
