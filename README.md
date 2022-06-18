@@ -1,5 +1,5 @@
 # 개요
-https://playentry.org/ (엔트리) 사이트에 있는 작품을 .exe화 (또는 프로그램화) 합니다.
+https://playentry.org/ (엔트리) 사이트에 있는 작품을 .exe 파일로 열수 있게 만듭니다.
 
 **이 자바스크립트 파일은 ELECTRON을 사용하고 있습니다.**
 
