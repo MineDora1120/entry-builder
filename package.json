@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js",
+    "build": "electron-builder --win portable --x64"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pkg": "^5.7.0",
+    "./entry-builder/builder": "0.0.1",
+    "./entry-builder/html-builder" : "0.0.1"
+  },"devDependencies": {
+    "electron": "^19.0.4",
+    "electron-builder": "^23.0.3",
+    "electron-log": "^4.4.7",
+    "electron-updater": "^5.0.1"
+  }
+}
