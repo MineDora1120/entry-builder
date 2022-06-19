@@ -39,7 +39,8 @@ module.exports = {
 
     setTimeout(() => {
         win.setTitle(title)
-    }, 800)
+        win.setIcon(dirnameicon)
+    }, 5000)
     }
     app.on('ready', createWindow)
     app.on('ready', onlineWindow)
