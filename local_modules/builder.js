@@ -40,7 +40,7 @@ module.exports = {
       setTimeout(() => {
         win.setTitle(title)
      if(!dirnameicon) return;
-        win.setIcon(`./.icon-ico/${dirnameicon}`)
+   //     win.setIcon(`./.icon-ico/${dirnameicon}`) 빌드할때만 사용하세요.
     }, 5000)    
     }
     app.on('ready', createWindow)
