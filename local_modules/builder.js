@@ -23,7 +23,7 @@ module.exports = {
      console.log("* ELECTRON is ON!")
     }
     function createWindow() {
-    win = new BrowserWindow({width: 1105, height: 700, resizable: false, autoHideMenuBar:true, title : `${title}`, icon: `${dirnameicon}`})
+    win = new BrowserWindow({width: 1105, height: 700, resizable: true, autoHideMenuBar:true, title : `${title}`, icon: `${dirnameicon}`})
  
     win.loadURL(url.format({
         pathname: files,
@@ -36,6 +36,10 @@ module.exports = {
         win = null
         app.quit();
     })
+
+    setTimeout(() => {
+        win.setTitle(title)
+    }, 800)
     }
     app.on('ready', createWindow)
     app.on('ready', onlineWindow)
