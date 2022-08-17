@@ -1,6 +1,6 @@
 {
-  "name": "이곳에 프로그램 이름을 입력해주세오. 한글은 지원하지 않습니다.",
-  "version": "이곳에 버전을 설정해주세요.",
+  "name": "entry-builder",
+  "version": "1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
