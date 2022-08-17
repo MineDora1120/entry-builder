@@ -23,7 +23,7 @@ module.exports = {
      console.log("* ELECTRON is ON!")
     }
     function createWindow() {
-    win = new BrowserWindow({width: 1105, height: 700, resizable: false, autoHideMenuBar:true, title : `${title}`, icon: `${dirnameicon}`, fullscreenable: false})
+    win = new BrowserWindow({width: 1105, height: 700, resizable: false, autoHideMenuBar:true, title : `${title}`, icon: __dirname +`${dirnameicon}`, fullscreenable: false})
  
     win.loadURL(url.format({
         pathname: files,
