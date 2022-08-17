@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "pkg": "^5.7.0",
+    "pkg": "^5.7.0"
   },"devDependencies": {
     "electron": "^19.0.4",
     "electron-builder": "^23.0.3",
