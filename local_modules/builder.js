@@ -31,17 +31,14 @@ module.exports = {
         slashes: true
     }))
     console.log("* ENTRY BUILDER ELECTRON - REGISTERING! (3/3)")
-
     win.on('closed', () => {
         win = null
         app.quit();
     })
 
-      setTimeout(() => {
-        win.setTitle(title)
-     if(!dirnameicon) return;
-   //     win.setIcon(`./.icon-ico/${dirnameicon}`) 빌드할때만 사용하세요.
-    }, 5000)    
+win.on('page-title-updated', (evt) => {
+  evt.preventDefault();
+});
     }
     app.on('ready', createWindow)
     app.on('ready', onlineWindow)
