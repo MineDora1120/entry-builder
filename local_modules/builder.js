@@ -104,10 +104,4 @@ win.on('page-title-updated', (evt) => {
         return console.error("이 코드는 사용되지 않습니다. 대신 siteinfo를 사용하실 수 있습니다.\nThis code is deprecated. You can use 'siteinfo' instead.")
       }
 }
-function mkdir( dirPath ) {
-    const isExists = fs.existsSync( dirPath );
-    if( !isExists ) {
-        fs.mkdirSync( dirPath, { recursive: true } );
-    }
-}
   
