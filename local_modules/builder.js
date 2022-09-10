@@ -79,13 +79,35 @@ win.on('page-title-updated', (evt) => {
             return process.exit()
         }
         console.log("* ENTRY BUILDER HTML - Ready Module.")
-          const content = `
+      const content = `
       <body style="overflow:hidden;">
       <script>window.location.href = "${url}"</script> 
       </body>
       `
       fs.writeFile(files, content, err => {
               if(err) return console.log("ERROR! : Could not create html.\n임시파일을 만들 수 없었습니다.");
+            })
+      const checkHTML = `
+      <!DOCTYPE html>
+      <html>
+      <body>
+      <script>
+        const alertOnlineStatus = () => {
+          if(!navigator.onLine) {
+          window.alert('엔트리에 접속할 수 없습니다! \n인터넷 연결을 확인하고 프로그램을 다시 실행해 주세요!')
+          }
+        }
+      
+        window.addEventListener('online',  alertOnlineStatus)
+        window.addEventListener('offline',  alertOnlineStatus)
+      
+        alertOnlineStatus()
+      </script>
+      </body>
+      </html>
+      `
+      fs.writeFile(`${__dirname}/online.html`, checkHTML, err => {
+              if(err) return console.log("ERROR! : Could not create CheckOnline.\n온라인 확인파일을 만들 수 없었습니다.");
             })
             console.log("* ENTRY BUILDER HTML - SUSSESSFUL!")
       },
