@@ -60,27 +60,26 @@ win.on('page-title-updated', (evt) => {
     },
         /**
      * URL을 연결할 파일을 생성하는 함수입니다.
-      @param {String} url 엔트리 작품의 iframe링크를 입력하는 란입니다.
+      @param {String} id 엔트리 작품의 id를 입력하는 란입니다.
       @param {String} files 연결용 html을 생성할 경로를 지정하는 란입니다.
       @todo 이 항목들(title 제외)은 입력하지 않을 경우 기본데이터로 대체됩니다.
      */
-     siteinfo : function({url, files}) {
+     siteinfo : function({id, files}) {
         if(!files) var files = `${__dirname}/temp.html`
 
-        if(!url) {
-            new Error("URL is not found.");
-            return process.exit()
+        if(!id) {
+            throw new Error("Project ID is not found.");
         }
         console.log("* ENTRY BUILDER HTML - Ready Module.")
       const content = `
       <body style="overflow:hidden;">
       <script>
-      window.location.href = "${url}"
+      window.location.href = "${encodeURI(`https://playentry.org/iframe/${id}`)}"
       </script> 
       </body>
       `
       fs.writeFile(files, content, err => {
-              if(err) return console.log("ERROR! : Could not create html.\n임시파일을 만들 수 없었습니다.");
+              if(err) throw new Error("ERROR! : Could not create html.\n임시파일을 만들 수 없었습니다.");
             })
             console.log("* ENTRY BUILDER HTML - SUSSESSFUL!")
       },
@@ -89,13 +88,13 @@ win.on('page-title-updated', (evt) => {
      * @deprecated 이 함수는 entry-builder v2.0부터는 지원되지 않습니다. 대신 info를 사용하실 수 있습니다. 자세한 내용은 info의 설명을 참고하세요.
      */
       infomation : function(title, dirnameicon, files) {
-        new Error("이 코드는 사용되지 않습니다. 대신 info를 사용하실 수 있습니다.\nThis code is deprecated. You can use 'info' instead.");
+        throw new Error("이 코드는 사용되지 않습니다. 대신 info를 사용하실 수 있습니다.\nThis code is deprecated. You can use 'info' instead.");
       },
     /**
      * 엔트리 빌더의 정보를 설정합니다. (구형)
      * @deprecated 이 함수는 entry-builder v2.0부터는 지원되지 않습니다. 대신 siteinfo를 사용하실 수 있습니다. 자세한 내용은 siteinfo의 설명을 참고하세요.
      */
       Makehtml : function(url, files) {
-        new Error("이 코드는 사용되지 않습니다. 대신 siteinfo를 사용하실 수 있습니다.\nThis code is deprecated. You can use 'siteinfo' instead.");
+        throw new Error("이 코드는 사용되지 않습니다. 대신 siteinfo를 사용하실 수 있습니다.\nThis code is deprecated. You can use 'siteinfo' instead.");
       }
 }
